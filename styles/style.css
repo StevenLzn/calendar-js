@@ -1,0 +1,19 @@
+.calendar-container{
+    width: 35%;
+    margin: auto;
+}
+
+.day-list{
+    display: table;
+    width: 100%;
+    font-size: 25px;
+    text-align: center;
+}
+
+.day-list td {
+    border: 1px #888888 solid;
+    padding: 2.5% 0%;
+    border-radius: 12px 5px;
+    margin: 1%;
+}
+
