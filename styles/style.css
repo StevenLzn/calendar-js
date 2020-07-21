@@ -1,19 +1,51 @@
+body{
+    font-family: 'Sora', sans-serif;   
+}
 .calendar-container{
     width: 35%;
     margin: auto;
 }
 
+.calendar-title-container {
+    background-color: #99BDC8;
+    height: 70px;
+}
+
+#month {
+    width: 47.5%;
+    font-size: 40px;
+    font-weight: 900;
+    display: inline-block;
+    padding-left: 2%;
+    margin: 2% 0;
+}
+#year {
+    font-weight: 200;
+    width: 47.5%;
+    font-size: 40px;
+    display: inline-block;
+    text-align: right;
+    padding-right: 2%;
+    margin: 2% 0;
+}
+.days-title{
+    height: 45px;
+}
+
 .day-list{
     display: table;
     width: 100%;
-    font-size: 25px;
+    font-size: 22px;
     text-align: center;
+    font-weight: 400;
 }
 
-.day-list td {
+.cell-day {
     border: 1px #888888 solid;
     padding: 2.5% 0%;
     border-radius: 12px 5px;
     margin: 1%;
 }
+
+
 

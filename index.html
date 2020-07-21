@@ -6,16 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles/style.css">
-</head>
-
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;700&display=swap" rel="stylesheet">
 <body>
     <div class="calendar-container">
         <div class="calendar-title-container">
-            <p>Enero</p>
-            <p>2020</p>
+            <p id="month"></p>
+            <p id="year"></p>
         </div>
         <table class="day-list" id="day-list">
-            <tr>
+            <tr class="days-title">
                 <th>D</th>
                 <th>L</th>
                 <th>M</th>
@@ -24,7 +23,6 @@
                 <th>V</th>
                 <th>S</th>
             </tr>
-
         </table>
     </div>
     <script async src="scripts/main.js"></script>
