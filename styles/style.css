@@ -9,6 +9,7 @@ body{
 .calendar-title-container {
     background-color: #99BDC8;
     height: 70px;
+    text-align: right;
 }
 
 #month {
@@ -18,6 +19,7 @@ body{
     display: inline-block;
     padding-left: 2%;
     margin: 2% 0;
+    text-align: left;
 }
 #year {
     font-weight: 200;
@@ -28,20 +30,26 @@ body{
     padding-right: 2%;
     margin: 2% 0;
 }
-.days-title{
-    height: 45px;
-}
 
-.day-list{
+.list-container{
     display: table;
     width: 100%;
     font-size: 22px;
     text-align: center;
     font-weight: 400;
+    padding-top: 3%;
 }
 
 .cell-day {
     border: 1px #888888 solid;
+    padding: 2.5% 0%;
+    border-radius: 12px 5px;
+    margin: 1%;
+}
+
+.cell-month {
+    border: 1px #888888 solid;
+    font-size: 20px;
     padding: 2.5% 0%;
     border-radius: 12px 5px;
     margin: 1%;
