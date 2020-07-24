@@ -31,6 +31,25 @@ body{
     margin: 2% 0;
 }
 
+.navigation-next {
+    font-weight: 300;
+    width: 47.5%;
+    font-size: 40px;
+    display: none;
+    text-align: right;
+    padding-right: 2%;
+    margin: 2% 0;
+}
+
+.navigation-prev {
+    width: 47.5%;
+    font-size: 40px;
+    font-weight: 300;
+    display: none;
+    padding-left: 2%;
+    margin: 2% 0;
+    text-align: left;
+}
 .list-container{
     display: table;
     width: 100%;
@@ -45,6 +64,10 @@ body{
     padding: 2.5% 0%;
     border-radius: 12px 5px;
     margin: 1%;
+}
+
+.cell-sunday{
+    background-color: #99BDC8;
 }
 
 .cell-month {

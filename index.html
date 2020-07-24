@@ -9,9 +9,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;700&display=swap" rel="stylesheet">
 <body>
     <div class="calendar-container">
-        <div class="calendar-title-container">
+        <div class="calendar-title-container" id="calendar-title-container">
             <p id="month" onclick="monthsClick()"></p>
-            <p id="year"></p>
+            <p id="year" onclick="yearsClick()"></p>
+            <p id="prev" class="navigation-prev" onclick="prevClick()"> < </p>
+            <p id="next" class="navigation-next" onclick="nextClick()"> > </p>
         </div>
         <table class="list-container" id="list-container">
             <tr class="days-title">

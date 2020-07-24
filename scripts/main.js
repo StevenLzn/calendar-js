@@ -3,6 +3,8 @@ var day = actual.getDate();
 var month = actual.getMonth() + 1;
 var year = actual.getFullYear();
 var page = 0;
+let next = false;
+let prev = false;
 var MONTHS = [
     { id: "1", title: "ENERO", description: "Enero", days: 31 },
     { id: "2", title: "FEBRERO", description: "Febrero", days: 28 },
@@ -73,13 +75,16 @@ function ListDays() {
                 row.appendChild(cell)
             } else {
                 if (counter < daysQuantity) {
-                    counter++;
                     var cell = document.createElement("td")
                     var cellText = document.createTextNode(day)
+                    if (j == 0) {
+                        cell.classList.add("cell-sunday")
+                    }
                     cell.classList.add("cell-day")
                     cell.appendChild(cellText)
                     row.appendChild(cell)
                     day++;
+                    counter++;
                 }
             }
         }
@@ -94,6 +99,8 @@ function monthsClick() {
     document.getElementsByClassName("list")[0].innerHTML = '';
     document.getElementsByClassName("days-title")[0].style.display = "none";
     document.getElementById("month").style.display = "none";
+    document.getElementById("year").textContent = year;
+
 
     container.appendChild(body);
     for (let i = 0; i < 4; i++) {
@@ -112,9 +119,73 @@ function monthsClick() {
     }
 }
 
+function yearsClick() {
+    let counter = 0;
+    let body = document.getElementsByClassName("list")[0];
+    let container = document.getElementById("list-container");
+    document.getElementsByClassName("list")[0].innerHTML = '';
+    document.getElementsByClassName("days-title")[0].style.display = "none";
+    document.getElementById("month").style.display = "none";
+    document.getElementById("year").style.display = "none";
+    document.getElementById("prev").style.display = "inline-block";
+    document.getElementById("next").style.display = "inline-block";
+    container.appendChild(body)
+    for (let i = 0; i < 4; i++) {
+        let row = document.createElement("tr")
+        for (let j = 0; j < 3; j++) {
+            let cell = document.createElement("td")
+            let cellText = document.createTextNode(year)
+            cell.addEventListener("click", yearClick)
+            cell.param = year;
+            cell.classList.add("cell-month");
+            cell.appendChild(cellText);
+            row.appendChild(cell);
+            counter++;
+            if ((!prev && !next) || (prev && !next)) {
+                year--;
+            } else if (!prev && next) {
+                year++;
+            }
+
+        }
+        body.appendChild(row)
+    }
+}
+
+
 function monthClick(e) {
     document.getElementsByClassName("days-title")[0].style.display = "table-row";
     document.getElementById("month").style.display = "inline-block";
     month = e.target.param + 1;
     ListDays()
+}
+
+function yearClick(e) {
+    document.getElementById("year").style.display = "inline-block";
+    document.getElementById("prev").style.display = "none";
+    document.getElementById("next").style.display = "none";
+    year = e.target.param;
+    monthsClick();
+}
+
+function prevClick() {
+    if (year > 1900) {
+        if (!prev && next) {
+            year -= 13;
+        }
+        next = false;
+        prev = true;
+        yearsClick()
+    }
+}
+
+function nextClick() {
+    if (year < 2100) {
+        if ((!prev && !next) || (prev && !next)) {
+            year += 13;
+        }
+        next = true;
+        prev = false;
+        yearsClick()
+    }
 }
